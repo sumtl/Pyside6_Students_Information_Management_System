@@ -25,22 +25,97 @@ class Ui_MainWindow(object):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(1039, 843)
-        self.centralwidget = QWidget(MainWindow)
-        self.centralwidget.setObjectName(u"centralwidget")
-        self.frame = QFrame(self.centralwidget)
+        self.Form = QWidget(MainWindow)
+        self.Form.setObjectName(u"Form")
+        self.Form.setStyleSheet(u"/* Styles for the info_frame element */\n"
+"#info_frame {\n"
+"  background-color: #fff;\n"
+"  border: none;\n"
+"  border-radius: 5px;\n"
+"}\n"
+" \n"
+"/* Styles for labels, input fields, and combo boxes inside \"info_frame\" */\n"
+"#info_frame QLabel,\n"
+"#info_frame QLineEdit,\n"
+"#info_frame QComboBox,\n"
+"#function_frame QPushButton,\n"
+"QHeaderView::section {\n"
+"  font-family: Segoe UI Semibold;\n"
+"  font-size: 12px;\n"
+"}\n"
+" \n"
+"/* Styles for input fields and combo boxes inside info_frame */\n"
+"#info_frame QLineEdit,\n"
+"#info_frame QComboBox {\n"
+"  padding: 4px 5px;\n"
+"  border: 1px solid #838383;\n"
+"  border-radius: 2px;\n"
+"}\n"
+" \n"
+"/* Focus styles for input fields and combo boxes */\n"
+"#info_frame QLineEdit:focus,\n"
+"#info_frame QComboBox:focus {\n"
+"  border-color: #005fff;\n"
+"}\n"
+" \n"
+"/* Styles for combo boxes drop-down */\n"
+"QComboBox::drop-down {\n"
+"  background: transparent;\n"
+"  border: none;\n"
+"  margin-right: 5px;\n"
+"}\n"
+" \n"
+"/* Styles for the down-arrow icon in combo "
+                        "boxes */\n"
+"QComboBox::down-arrow {\n"
+"  image: url(:/icons/expand_more.svg);\n"
+"}\n"
+" \n"
+"/* Style for the result_frame */\n"
+"#result_frame {\n"
+"  border-radius: 5px;\n"
+"  background-color: #fff;\n"
+"}\n"
+" \n"
+"/* Style for border of QTableWidget */\n"
+"QTableWidget {\n"
+"  border-radius: 5px;\n"
+"  border: 1px solid #0f0f0f;\n"
+"}\n"
+" \n"
+"/* Style for table header section */\n"
+"QHeaderView::section {\n"
+"  border: none;\n"
+"  border-bottom: 1px solid #0fc6ff;\n"
+"  text-align: left;\n"
+"  padding: 3px 5px;\n"
+"}\n"
+" \n"
+"/* Styles for table items */\n"
+"QTableWidget::item {\n"
+"  border-bottom: 1px solid #0fc6ff;\n"
+"  color: #000;\n"
+"  padding-left: 5px;\n"
+"}")
+        self.frame = QFrame(self.Form)
         self.frame.setObjectName(u"frame")
         self.frame.setGeometry(QRect(70, 30, 871, 101))
         self.frame.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout = QHBoxLayout(self.frame)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.label_7 = QLabel(self.frame)
-        self.label_7.setObjectName(u"label_7")
-        self.label_7.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.title_label_2 = QLabel(self.frame)
+        self.title_label_2.setObjectName(u"title_label_2")
+        font = QFont()
+        font.setFamilies([u"Snell Roundhand"])
+        font.setPointSize(40)
+        font.setBold(True)
+        self.title_label_2.setFont(font)
+        self.title_label_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.horizontalLayout.addWidget(self.label_7)
+        self.horizontalLayout.addWidget(self.title_label_2)
 
-        self.info_frame = QFrame(self.centralwidget)
+        self.info_frame = QFrame(self.Form)
         self.info_frame.setObjectName(u"info_frame")
         self.info_frame.setGeometry(QRect(50, 170, 851, 132))
         self.info_frame.setFrameShape(QFrame.Shape.StyledPanel)
@@ -124,7 +199,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_3.addLayout(self.gridLayout_2, 0, 1, 1, 1)
 
-        self.function_frame = QFrame(self.centralwidget)
+        self.function_frame = QFrame(self.Form)
         self.function_frame.setObjectName(u"function_frame")
         self.function_frame.setGeometry(QRect(60, 350, 841, 101))
         self.function_frame.setFrameShape(QFrame.Shape.StyledPanel)
@@ -187,7 +262,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.delete_btn)
 
-        self.result_frame = QFrame(self.centralwidget)
+        self.result_frame = QFrame(self.Form)
         self.result_frame.setObjectName(u"result_frame")
         self.result_frame.setGeometry(QRect(20, 520, 971, 241))
         self.result_frame.setFrameShape(QFrame.Shape.StyledPanel)
@@ -221,11 +296,7 @@ class Ui_MainWindow(object):
         self.tableWidget.horizontalHeader().setDefaultSectionSize(120)
         self.tableWidget.horizontalHeader().setStretchLastSection(True)
         self.tableWidget.verticalHeader().setVisible(False)
-        self.title_label = QLabel(self.centralwidget)
-        self.title_label.setObjectName(u"title_label")
-        self.title_label.setGeometry(QRect(270, 480, 251, 20))
-        self.title_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        MainWindow.setCentralWidget(self.centralwidget)
+        MainWindow.setCentralWidget(self.Form)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
         self.menubar.setGeometry(QRect(0, 0, 1039, 24))
@@ -241,7 +312,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Students Information System", None))
+        self.title_label_2.setText(QCoreApplication.translate("MainWindow", u"Students Information System", None))
         self.label_2.setText(QCoreApplication.translate("MainWindow", u"First Name", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Student ID", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Last Name", None))
@@ -266,6 +337,5 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"State", None));
         ___qtablewidgetitem5 = self.tableWidget.horizontalHeaderItem(5)
         ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"Email Address", None));
-        self.title_label.setText("")
     # retranslateUi
 
