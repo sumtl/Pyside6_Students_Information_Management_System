@@ -306,3 +306,4 @@ class Ui_Form(object):
         self.delete_btn.setText(QCoreApplication.translate("Form", u"Delete", None))
         self.title_label.setText(QCoreApplication.translate("Form", u"Students Information System", None))
     # retranslateUi
+

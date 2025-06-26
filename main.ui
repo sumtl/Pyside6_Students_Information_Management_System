@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>Form</class>
+ <widget class="QMainWindow" name="Form">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1039</width>
-    <height>843</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="Form">
-   <property name="styleSheet">
-    <string notr="true">/* Styles for the info_frame element */
+  <property name="styleSheet">
+   <string notr="true">/* Styles for the info_frame element */
 #info_frame {
   background-color: #fff;
   border: none;
@@ -84,49 +83,15 @@ QTableWidget::item {
   color: #000;
   padding-left: 5px;
 }</string>
-   </property>
-   <widget class="QFrame" name="frame">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>30</y>
-      <width>871</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Shape::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Shadow::Raised</enum>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QLabel" name="title_label_2">
-       <property name="font">
-        <font>
-         <family>Snell Roundhand</family>
-         <pointsize>40</pointsize>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Students Information System</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
+  </property>
+  <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="info_frame">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>170</y>
-      <width>851</width>
-      <height>132</height>
+      <x>20</x>
+      <y>110</y>
+      <width>731</width>
+      <height>121</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -135,249 +100,109 @@ QTableWidget::item {
     <property name="frameShadow">
      <enum>QFrame::Shadow::Raised</enum>
     </property>
-    <layout class="QGridLayout" name="gridLayout_3">
-     <property name="leftMargin">
-      <number>30</number>
+    <widget class="QLineEdit" name="lineEdit_7">
+     <property name="geometry">
+      <rect>
+       <x>400</x>
+       <y>190</y>
+       <width>113</width>
+       <height>21</height>
+      </rect>
      </property>
-     <property name="topMargin">
-      <number>20</number>
+    </widget>
+    <widget class="QSplitter" name="splitter_7">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>651</width>
+       <height>79</height>
+      </rect>
      </property>
-     <property name="rightMargin">
-      <number>30</number>
+     <property name="orientation">
+      <enum>Qt::Orientation::Horizontal</enum>
      </property>
-     <property name="bottomMargin">
-      <number>20</number>
-     </property>
-     <property name="horizontalSpacing">
-      <number>20</number>
-     </property>
-     <property name="verticalSpacing">
-      <number>10</number>
-     </property>
-     <item row="0" column="0">
-      <layout class="QGridLayout" name="gridLayout">
-       <property name="horizontalSpacing">
-        <number>10</number>
+     <widget class="QSplitter" name="splitter_3">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <property name="handleWidth">
+       <number>5</number>
+      </property>
+      <widget class="QSplitter" name="splitter">
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
-       <property name="verticalSpacing">
-        <number>15</number>
+       <property name="handleWidth">
+        <number>5</number>
        </property>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_2">
-         <property name="text">
-          <string>First Name</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>Student ID</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>Last Name</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QLineEdit" name="lineEdit_3"/>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLineEdit" name="lineEdit"/>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLineEdit" name="lineEdit_2"/>
-       </item>
-      </layout>
-     </item>
-     <item row="0" column="1">
-      <layout class="QGridLayout" name="gridLayout_2">
-       <property name="horizontalSpacing">
-        <number>10</number>
-       </property>
-       <property name="verticalSpacing">
-        <number>15</number>
-       </property>
-       <item row="2" column="1">
-        <widget class="QComboBox" name="comboBox_2"/>
-       </item>
-       <item row="0" column="1" rowspan="2">
-        <widget class="QComboBox" name="comboBox"/>
-       </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_6">
-         <property name="text">
-          <string>Email Address</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QLineEdit" name="lineEdit_4"/>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_5">
-         <property name="text">
-          <string>City</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0" rowspan="2">
-        <widget class="QLabel" name="label_4">
-         <property name="text">
-          <string>State</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QFrame" name="function_frame">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>350</y>
-      <width>841</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Shape::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Shadow::Raised</enum>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <property name="spacing">
-      <number>15</number>
-     </property>
-     <property name="leftMargin">
-      <number>30</number>
-     </property>
-     <property name="topMargin">
-      <number>10</number>
-     </property>
-     <property name="rightMargin">
-      <number>30</number>
-     </property>
-     <property name="bottomMargin">
-      <number>10</number>
-     </property>
-     <item>
-      <widget class="QPushButton" name="add_btn">
-       <property name="text">
-        <string>Add</string>
-       </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>icons/add.svg</normaloff>icons/add.svg</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>20</width>
-         <height>20</height>
-        </size>
-       </property>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Student ID</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>First Name</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Last Name</string>
+        </property>
+       </widget>
       </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="update_btn">
-       <property name="text">
-        <string>Update</string>
+      <widget class="QSplitter" name="splitter_2">
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>icons/update.svg</normaloff>icons/update.svg</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>20</width>
-         <height>20</height>
-        </size>
-       </property>
+       <widget class="QLineEdit" name="lineEdit"/>
+       <widget class="QLineEdit" name="lineEdit_2"/>
+       <widget class="QLineEdit" name="lineEdit_3"/>
       </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="select_btn">
-       <property name="text">
-        <string>Select</string>
+     </widget>
+     <widget class="QSplitter" name="splitter_6">
+      <property name="orientation">
+       <enum>Qt::Orientation::Horizontal</enum>
+      </property>
+      <widget class="QSplitter" name="splitter_4">
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>icons/select.svg</normaloff>icons/select.svg</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>20</width>
-         <height>20</height>
-        </size>
-       </property>
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string>State</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>City</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>Email Adress</string>
+        </property>
+       </widget>
       </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="search_btn">
-       <property name="text">
-        <string>Search</string>
+      <widget class="QSplitter" name="splitter_5">
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
        </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>icons/search.svg</normaloff>icons/search.svg</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>20</width>
-         <height>20</height>
-        </size>
-       </property>
+       <widget class="QComboBox" name="comboBox"/>
+       <widget class="QComboBox" name="comboBox_2"/>
+       <widget class="QLineEdit" name="lineEdit_6"/>
       </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="clear_btn">
-       <property name="text">
-        <string>Clear</string>
-       </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>icons/clear.svg</normaloff>icons/clear.svg</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>20</width>
-         <height>20</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="delete_btn">
-       <property name="text">
-        <string>Delete</string>
-       </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>icons/delete.svg</normaloff>icons/delete.svg</iconset>
-       </property>
-       <property name="iconSize">
-        <size>
-         <width>20</width>
-         <height>20</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-    </layout>
+     </widget>
+    </widget>
    </widget>
    <widget class="QFrame" name="result_frame">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>520</y>
-      <width>971</width>
-      <height>241</height>
+      <y>330</y>
+      <width>731</width>
+      <height>181</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -389,10 +214,10 @@ QTableWidget::item {
     <widget class="QTableWidget" name="tableWidget">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>20</y>
-       <width>871</width>
-       <height>192</height>
+       <x>30</x>
+       <y>40</y>
+       <width>691</width>
+       <height>111</height>
       </rect>
      </property>
      <property name="focusPolicy">
@@ -406,9 +231,6 @@ QTableWidget::item {
      </attribute>
      <attribute name="horizontalHeaderDefaultSectionSize">
       <number>120</number>
-     </attribute>
-     <attribute name="horizontalHeaderStretchLastSection">
-      <bool>true</bool>
      </attribute>
      <attribute name="verticalHeaderVisible">
       <bool>false</bool>
@@ -455,12 +277,204 @@ QTableWidget::item {
      </column>
      <column>
       <property name="text">
-       <string>Email Address</string>
+       <string>Email Adress</string>
       </property>
       <property name="textAlignment">
        <set>AlignLeading|AlignVCenter</set>
       </property>
      </column>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="function_frame">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>250</y>
+      <width>731</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QPushButton" name="add_btn">
+     <property name="geometry">
+      <rect>
+       <x>25</x>
+       <y>10</y>
+       <width>90</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Add</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>icons/add.svg</normaloff>icons/add.svg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="update_btn">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>10</y>
+       <width>90</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Update</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>icons/update.svg</normaloff>icons/update.svg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="select_btn">
+     <property name="geometry">
+      <rect>
+       <x>255</x>
+       <y>10</y>
+       <width>90</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Select</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>icons/select.svg</normaloff>icons/select.svg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="search_btn">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>10</y>
+       <width>90</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Search</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>icons/search.svg</normaloff>icons/search.svg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="clear_btn">
+     <property name="geometry">
+      <rect>
+       <x>485</x>
+       <y>10</y>
+       <width>90</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Clear</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>icons/clear.svg</normaloff>icons/clear.svg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="delete_btn">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>10</y>
+       <width>90</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Delete</string>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>icons/delete.svg</normaloff>icons/delete.svg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>731</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QLabel" name="title_label">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>10</y>
+       <width>611</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Blackadder ITC</family>
+       <pointsize>30</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Students Information System</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignmentFlag::AlignCenter</set>
+     </property>
     </widget>
    </widget>
   </widget>
@@ -469,8 +483,8 @@ QTableWidget::item {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1039</width>
-     <height>24</height>
+     <width>800</width>
+     <height>33</height>
     </rect>
    </property>
   </widget>
