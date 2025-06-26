@@ -1,12 +1,12 @@
 import sys
 from PySide6.QtWidgets import QApplication, QMainWindow
-from main_ui import Ui_MainWindow # Importation de la classe d'interface générée par Qt Designer
+from main_ui import Ui_Form # Importation de la classe d'interface générée par Qt Designer
  
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         # Création d'une instance de l'interface utilisateur
-        self.ui = Ui_MainWindow()  # 使用正确的类名
+        self.ui = Ui_Form()   
         # Configuration de l'interface utilisateur dans la fenêtre principale
         self.ui.setupUi(self)
  

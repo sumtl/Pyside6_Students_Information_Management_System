@@ -15,19 +15,17 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QGridLayout,
-    QHBoxLayout, QHeaderView, QLabel, QLineEdit,
-    QMainWindow, QMenuBar, QPushButton, QSizePolicy,
-    QStatusBar, QTableWidget, QTableWidgetItem, QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHeaderView,
+    QLabel, QLineEdit, QMainWindow, QMenuBar,
+    QPushButton, QSizePolicy, QSplitter, QStatusBar,
+    QTableWidget, QTableWidgetItem, QWidget)
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        if not MainWindow.objectName():
-            MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1039, 843)
-        self.Form = QWidget(MainWindow)
-        self.Form.setObjectName(u"Form")
-        self.Form.setStyleSheet(u"/* Styles for the info_frame element */\n"
+class Ui_Form(object):
+    def setupUi(self, Form):
+        if not Form.objectName():
+            Form.setObjectName(u"Form")
+        Form.resize(800, 600)
+        Form.setStyleSheet(u"/* Styles for the info_frame element */\n"
 "#info_frame {\n"
 "  background-color: #fff;\n"
 "  border: none;\n"
@@ -97,174 +95,85 @@ class Ui_MainWindow(object):
 "  color: #000;\n"
 "  padding-left: 5px;\n"
 "}")
-        self.frame = QFrame(self.Form)
-        self.frame.setObjectName(u"frame")
-        self.frame.setGeometry(QRect(70, 30, 871, 101))
-        self.frame.setFrameShape(QFrame.Shape.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Shadow.Raised)
-        self.horizontalLayout = QHBoxLayout(self.frame)
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.title_label_2 = QLabel(self.frame)
-        self.title_label_2.setObjectName(u"title_label_2")
-        font = QFont()
-        font.setFamilies([u"Snell Roundhand"])
-        font.setPointSize(40)
-        font.setBold(True)
-        self.title_label_2.setFont(font)
-        self.title_label_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
-
-        self.horizontalLayout.addWidget(self.title_label_2)
-
-        self.info_frame = QFrame(self.Form)
+        self.centralwidget = QWidget(Form)
+        self.centralwidget.setObjectName(u"centralwidget")
+        self.info_frame = QFrame(self.centralwidget)
         self.info_frame.setObjectName(u"info_frame")
-        self.info_frame.setGeometry(QRect(50, 170, 851, 132))
+        self.info_frame.setGeometry(QRect(20, 110, 731, 121))
         self.info_frame.setFrameShape(QFrame.Shape.StyledPanel)
         self.info_frame.setFrameShadow(QFrame.Shadow.Raised)
-        self.gridLayout_3 = QGridLayout(self.info_frame)
-        self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.gridLayout_3.setHorizontalSpacing(20)
-        self.gridLayout_3.setVerticalSpacing(10)
-        self.gridLayout_3.setContentsMargins(30, 20, 30, 20)
-        self.gridLayout = QGridLayout()
-        self.gridLayout.setObjectName(u"gridLayout")
-        self.gridLayout.setHorizontalSpacing(10)
-        self.gridLayout.setVerticalSpacing(15)
-        self.label_2 = QLabel(self.info_frame)
-        self.label_2.setObjectName(u"label_2")
-
-        self.gridLayout.addWidget(self.label_2, 1, 0, 1, 1)
-
-        self.label = QLabel(self.info_frame)
+        self.lineEdit_7 = QLineEdit(self.info_frame)
+        self.lineEdit_7.setObjectName(u"lineEdit_7")
+        self.lineEdit_7.setGeometry(QRect(400, 190, 113, 21))
+        self.splitter_7 = QSplitter(self.info_frame)
+        self.splitter_7.setObjectName(u"splitter_7")
+        self.splitter_7.setGeometry(QRect(20, 20, 651, 79))
+        self.splitter_7.setOrientation(Qt.Orientation.Horizontal)
+        self.splitter_3 = QSplitter(self.splitter_7)
+        self.splitter_3.setObjectName(u"splitter_3")
+        self.splitter_3.setOrientation(Qt.Orientation.Horizontal)
+        self.splitter_3.setHandleWidth(5)
+        self.splitter = QSplitter(self.splitter_3)
+        self.splitter.setObjectName(u"splitter")
+        self.splitter.setOrientation(Qt.Orientation.Vertical)
+        self.splitter.setHandleWidth(5)
+        self.label = QLabel(self.splitter)
         self.label.setObjectName(u"label")
-
-        self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
-
-        self.label_3 = QLabel(self.info_frame)
+        self.splitter.addWidget(self.label)
+        self.label_2 = QLabel(self.splitter)
+        self.label_2.setObjectName(u"label_2")
+        self.splitter.addWidget(self.label_2)
+        self.label_3 = QLabel(self.splitter)
         self.label_3.setObjectName(u"label_3")
-
-        self.gridLayout.addWidget(self.label_3, 2, 0, 1, 1)
-
-        self.lineEdit_3 = QLineEdit(self.info_frame)
-        self.lineEdit_3.setObjectName(u"lineEdit_3")
-
-        self.gridLayout.addWidget(self.lineEdit_3, 2, 1, 1, 1)
-
-        self.lineEdit = QLineEdit(self.info_frame)
+        self.splitter.addWidget(self.label_3)
+        self.splitter_3.addWidget(self.splitter)
+        self.splitter_2 = QSplitter(self.splitter_3)
+        self.splitter_2.setObjectName(u"splitter_2")
+        self.splitter_2.setOrientation(Qt.Orientation.Vertical)
+        self.lineEdit = QLineEdit(self.splitter_2)
         self.lineEdit.setObjectName(u"lineEdit")
-
-        self.gridLayout.addWidget(self.lineEdit, 0, 1, 1, 1)
-
-        self.lineEdit_2 = QLineEdit(self.info_frame)
+        self.splitter_2.addWidget(self.lineEdit)
+        self.lineEdit_2 = QLineEdit(self.splitter_2)
         self.lineEdit_2.setObjectName(u"lineEdit_2")
-
-        self.gridLayout.addWidget(self.lineEdit_2, 1, 1, 1, 1)
-
-
-        self.gridLayout_3.addLayout(self.gridLayout, 0, 0, 1, 1)
-
-        self.gridLayout_2 = QGridLayout()
-        self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.gridLayout_2.setHorizontalSpacing(10)
-        self.gridLayout_2.setVerticalSpacing(15)
-        self.comboBox_2 = QComboBox(self.info_frame)
-        self.comboBox_2.setObjectName(u"comboBox_2")
-
-        self.gridLayout_2.addWidget(self.comboBox_2, 2, 1, 1, 1)
-
-        self.comboBox = QComboBox(self.info_frame)
-        self.comboBox.setObjectName(u"comboBox")
-
-        self.gridLayout_2.addWidget(self.comboBox, 0, 1, 2, 1)
-
-        self.label_6 = QLabel(self.info_frame)
-        self.label_6.setObjectName(u"label_6")
-
-        self.gridLayout_2.addWidget(self.label_6, 3, 0, 1, 1)
-
-        self.lineEdit_4 = QLineEdit(self.info_frame)
-        self.lineEdit_4.setObjectName(u"lineEdit_4")
-
-        self.gridLayout_2.addWidget(self.lineEdit_4, 3, 1, 1, 1)
-
-        self.label_5 = QLabel(self.info_frame)
-        self.label_5.setObjectName(u"label_5")
-
-        self.gridLayout_2.addWidget(self.label_5, 2, 0, 1, 1)
-
-        self.label_4 = QLabel(self.info_frame)
+        self.splitter_2.addWidget(self.lineEdit_2)
+        self.lineEdit_3 = QLineEdit(self.splitter_2)
+        self.lineEdit_3.setObjectName(u"lineEdit_3")
+        self.splitter_2.addWidget(self.lineEdit_3)
+        self.splitter_3.addWidget(self.splitter_2)
+        self.splitter_7.addWidget(self.splitter_3)
+        self.splitter_6 = QSplitter(self.splitter_7)
+        self.splitter_6.setObjectName(u"splitter_6")
+        self.splitter_6.setOrientation(Qt.Orientation.Horizontal)
+        self.splitter_4 = QSplitter(self.splitter_6)
+        self.splitter_4.setObjectName(u"splitter_4")
+        self.splitter_4.setOrientation(Qt.Orientation.Vertical)
+        self.label_4 = QLabel(self.splitter_4)
         self.label_4.setObjectName(u"label_4")
-
-        self.gridLayout_2.addWidget(self.label_4, 0, 0, 2, 1)
-
-
-        self.gridLayout_3.addLayout(self.gridLayout_2, 0, 1, 1, 1)
-
-        self.function_frame = QFrame(self.Form)
-        self.function_frame.setObjectName(u"function_frame")
-        self.function_frame.setGeometry(QRect(60, 350, 841, 101))
-        self.function_frame.setFrameShape(QFrame.Shape.StyledPanel)
-        self.function_frame.setFrameShadow(QFrame.Shadow.Raised)
-        self.horizontalLayout_2 = QHBoxLayout(self.function_frame)
-        self.horizontalLayout_2.setSpacing(15)
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.horizontalLayout_2.setContentsMargins(30, 10, 30, 10)
-        self.add_btn = QPushButton(self.function_frame)
-        self.add_btn.setObjectName(u"add_btn")
-        icon = QIcon()
-        icon.addFile(u"icons/add.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.add_btn.setIcon(icon)
-        self.add_btn.setIconSize(QSize(20, 20))
-
-        self.horizontalLayout_2.addWidget(self.add_btn)
-
-        self.update_btn = QPushButton(self.function_frame)
-        self.update_btn.setObjectName(u"update_btn")
-        icon1 = QIcon()
-        icon1.addFile(u"icons/update.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.update_btn.setIcon(icon1)
-        self.update_btn.setIconSize(QSize(20, 20))
-
-        self.horizontalLayout_2.addWidget(self.update_btn)
-
-        self.select_btn = QPushButton(self.function_frame)
-        self.select_btn.setObjectName(u"select_btn")
-        icon2 = QIcon()
-        icon2.addFile(u"icons/select.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.select_btn.setIcon(icon2)
-        self.select_btn.setIconSize(QSize(20, 20))
-
-        self.horizontalLayout_2.addWidget(self.select_btn)
-
-        self.search_btn = QPushButton(self.function_frame)
-        self.search_btn.setObjectName(u"search_btn")
-        icon3 = QIcon()
-        icon3.addFile(u"icons/search.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.search_btn.setIcon(icon3)
-        self.search_btn.setIconSize(QSize(20, 20))
-
-        self.horizontalLayout_2.addWidget(self.search_btn)
-
-        self.clear_btn = QPushButton(self.function_frame)
-        self.clear_btn.setObjectName(u"clear_btn")
-        icon4 = QIcon()
-        icon4.addFile(u"icons/clear.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.clear_btn.setIcon(icon4)
-        self.clear_btn.setIconSize(QSize(20, 20))
-
-        self.horizontalLayout_2.addWidget(self.clear_btn)
-
-        self.delete_btn = QPushButton(self.function_frame)
-        self.delete_btn.setObjectName(u"delete_btn")
-        icon5 = QIcon()
-        icon5.addFile(u"icons/delete.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.delete_btn.setIcon(icon5)
-        self.delete_btn.setIconSize(QSize(20, 20))
-
-        self.horizontalLayout_2.addWidget(self.delete_btn)
-
-        self.result_frame = QFrame(self.Form)
+        self.splitter_4.addWidget(self.label_4)
+        self.label_5 = QLabel(self.splitter_4)
+        self.label_5.setObjectName(u"label_5")
+        self.splitter_4.addWidget(self.label_5)
+        self.label_6 = QLabel(self.splitter_4)
+        self.label_6.setObjectName(u"label_6")
+        self.splitter_4.addWidget(self.label_6)
+        self.splitter_6.addWidget(self.splitter_4)
+        self.splitter_5 = QSplitter(self.splitter_6)
+        self.splitter_5.setObjectName(u"splitter_5")
+        self.splitter_5.setOrientation(Qt.Orientation.Vertical)
+        self.comboBox = QComboBox(self.splitter_5)
+        self.comboBox.setObjectName(u"comboBox")
+        self.splitter_5.addWidget(self.comboBox)
+        self.comboBox_2 = QComboBox(self.splitter_5)
+        self.comboBox_2.setObjectName(u"comboBox_2")
+        self.splitter_5.addWidget(self.comboBox_2)
+        self.lineEdit_6 = QLineEdit(self.splitter_5)
+        self.lineEdit_6.setObjectName(u"lineEdit_6")
+        self.splitter_5.addWidget(self.lineEdit_6)
+        self.splitter_6.addWidget(self.splitter_5)
+        self.splitter_7.addWidget(self.splitter_6)
+        self.result_frame = QFrame(self.centralwidget)
         self.result_frame.setObjectName(u"result_frame")
-        self.result_frame.setGeometry(QRect(20, 520, 971, 241))
+        self.result_frame.setGeometry(QRect(20, 330, 731, 181))
         self.result_frame.setFrameShape(QFrame.Shape.StyledPanel)
         self.result_frame.setFrameShadow(QFrame.Shadow.Raised)
         self.tableWidget = QTableWidget(self.result_frame)
@@ -289,53 +198,111 @@ class Ui_MainWindow(object):
         __qtablewidgetitem5.setTextAlignment(Qt.AlignLeading|Qt.AlignVCenter);
         self.tableWidget.setHorizontalHeaderItem(5, __qtablewidgetitem5)
         self.tableWidget.setObjectName(u"tableWidget")
-        self.tableWidget.setGeometry(QRect(60, 20, 871, 192))
+        self.tableWidget.setGeometry(QRect(30, 40, 691, 111))
         self.tableWidget.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         self.tableWidget.setShowGrid(False)
         self.tableWidget.horizontalHeader().setMinimumSectionSize(50)
         self.tableWidget.horizontalHeader().setDefaultSectionSize(120)
-        self.tableWidget.horizontalHeader().setStretchLastSection(True)
         self.tableWidget.verticalHeader().setVisible(False)
-        MainWindow.setCentralWidget(self.Form)
-        self.menubar = QMenuBar(MainWindow)
+        self.function_frame = QFrame(self.centralwidget)
+        self.function_frame.setObjectName(u"function_frame")
+        self.function_frame.setGeometry(QRect(20, 250, 731, 51))
+        self.function_frame.setFrameShape(QFrame.Shape.StyledPanel)
+        self.function_frame.setFrameShadow(QFrame.Shadow.Raised)
+        self.add_btn = QPushButton(self.function_frame)
+        self.add_btn.setObjectName(u"add_btn")
+        self.add_btn.setGeometry(QRect(25, 10, 90, 30))
+        icon = QIcon()
+        icon.addFile(u"icons/add.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.add_btn.setIcon(icon)
+        self.add_btn.setIconSize(QSize(20, 20))
+        self.update_btn = QPushButton(self.function_frame)
+        self.update_btn.setObjectName(u"update_btn")
+        self.update_btn.setGeometry(QRect(140, 10, 90, 30))
+        icon1 = QIcon()
+        icon1.addFile(u"icons/update.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.update_btn.setIcon(icon1)
+        self.update_btn.setIconSize(QSize(20, 20))
+        self.select_btn = QPushButton(self.function_frame)
+        self.select_btn.setObjectName(u"select_btn")
+        self.select_btn.setGeometry(QRect(255, 10, 90, 30))
+        icon2 = QIcon()
+        icon2.addFile(u"icons/select.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.select_btn.setIcon(icon2)
+        self.select_btn.setIconSize(QSize(20, 20))
+        self.search_btn = QPushButton(self.function_frame)
+        self.search_btn.setObjectName(u"search_btn")
+        self.search_btn.setGeometry(QRect(370, 10, 90, 30))
+        icon3 = QIcon()
+        icon3.addFile(u"icons/search.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.search_btn.setIcon(icon3)
+        self.search_btn.setIconSize(QSize(20, 20))
+        self.clear_btn = QPushButton(self.function_frame)
+        self.clear_btn.setObjectName(u"clear_btn")
+        self.clear_btn.setGeometry(QRect(485, 10, 90, 30))
+        icon4 = QIcon()
+        icon4.addFile(u"icons/clear.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.clear_btn.setIcon(icon4)
+        self.clear_btn.setIconSize(QSize(20, 20))
+        self.delete_btn = QPushButton(self.function_frame)
+        self.delete_btn.setObjectName(u"delete_btn")
+        self.delete_btn.setGeometry(QRect(600, 10, 90, 30))
+        icon5 = QIcon()
+        icon5.addFile(u"icons/delete.svg", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.delete_btn.setIcon(icon5)
+        self.delete_btn.setIconSize(QSize(20, 20))
+        self.frame_4 = QFrame(self.centralwidget)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setGeometry(QRect(20, 20, 731, 71))
+        self.frame_4.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Shadow.Raised)
+        self.title_label = QLabel(self.frame_4)
+        self.title_label.setObjectName(u"title_label")
+        self.title_label.setGeometry(QRect(50, 10, 611, 51))
+        font = QFont()
+        font.setFamilies([u"Blackadder ITC"])
+        font.setPointSize(30)
+        self.title_label.setFont(font)
+        self.title_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        Form.setCentralWidget(self.centralwidget)
+        self.menubar = QMenuBar(Form)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1039, 24))
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QStatusBar(MainWindow)
+        self.menubar.setGeometry(QRect(0, 0, 800, 33))
+        Form.setMenuBar(self.menubar)
+        self.statusbar = QStatusBar(Form)
         self.statusbar.setObjectName(u"statusbar")
-        MainWindow.setStatusBar(self.statusbar)
+        Form.setStatusBar(self.statusbar)
 
-        self.retranslateUi(MainWindow)
+        self.retranslateUi(Form)
 
-        QMetaObject.connectSlotsByName(MainWindow)
+        QMetaObject.connectSlotsByName(Form)
     # setupUi
 
-    def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.title_label_2.setText(QCoreApplication.translate("MainWindow", u"Students Information System", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"First Name", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"Student ID", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Last Name", None))
-        self.label_6.setText(QCoreApplication.translate("MainWindow", u"Email Address", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"City", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"State", None))
-        self.add_btn.setText(QCoreApplication.translate("MainWindow", u"Add", None))
-        self.update_btn.setText(QCoreApplication.translate("MainWindow", u"Update", None))
-        self.select_btn.setText(QCoreApplication.translate("MainWindow", u"Select", None))
-        self.search_btn.setText(QCoreApplication.translate("MainWindow", u"Search", None))
-        self.clear_btn.setText(QCoreApplication.translate("MainWindow", u"Clear", None))
-        self.delete_btn.setText(QCoreApplication.translate("MainWindow", u"Delete", None))
+    def retranslateUi(self, Form):
+        Form.setWindowTitle(QCoreApplication.translate("Form", u"MainWindow", None))
+        self.label.setText(QCoreApplication.translate("Form", u"Student ID", None))
+        self.label_2.setText(QCoreApplication.translate("Form", u"First Name", None))
+        self.label_3.setText(QCoreApplication.translate("Form", u"Last Name", None))
+        self.label_4.setText(QCoreApplication.translate("Form", u"State", None))
+        self.label_5.setText(QCoreApplication.translate("Form", u"City", None))
+        self.label_6.setText(QCoreApplication.translate("Form", u"Email Adress", None))
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
-        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Student ID", None));
+        ___qtablewidgetitem.setText(QCoreApplication.translate("Form", u"Student ID", None));
         ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"First Name", None));
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("Form", u"First Name", None));
         ___qtablewidgetitem2 = self.tableWidget.horizontalHeaderItem(2)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Last Name", None));
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("Form", u"Last Name", None));
         ___qtablewidgetitem3 = self.tableWidget.horizontalHeaderItem(3)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"City", None));
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("Form", u"City", None));
         ___qtablewidgetitem4 = self.tableWidget.horizontalHeaderItem(4)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"State", None));
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("Form", u"State", None));
         ___qtablewidgetitem5 = self.tableWidget.horizontalHeaderItem(5)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"Email Address", None));
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("Form", u"Email Adress", None));
+        self.add_btn.setText(QCoreApplication.translate("Form", u"Add", None))
+        self.update_btn.setText(QCoreApplication.translate("Form", u"Update", None))
+        self.select_btn.setText(QCoreApplication.translate("Form", u"Select", None))
+        self.search_btn.setText(QCoreApplication.translate("Form", u"Search", None))
+        self.clear_btn.setText(QCoreApplication.translate("Form", u"Clear", None))
+        self.delete_btn.setText(QCoreApplication.translate("Form", u"Delete", None))
+        self.title_label.setText(QCoreApplication.translate("Form", u"Students Information System", None))
     # retranslateUi
-
